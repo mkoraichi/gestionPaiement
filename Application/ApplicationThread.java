@@ -23,14 +23,19 @@ public class ApplicationThread extends ServerThread{
      *
      */
     protected Pannier pannier=new Pannier();
+    
     public void ajouterProduit(Produit p,int quantité){
         
+    }
+        public void getTotal(){
+        double result=0;
+        for(LignePannier)
     }
     @Override
     public void run() {
         try {
             tunel.send("Envoyer Votre données :");
-            String msgClient;
+            String msgClient=tunel.read();
             
         } catch (IOException ex) {
             Logger.getLogger(ApplicationThread.class.getName()).log(Level.SEVERE, null, ex);

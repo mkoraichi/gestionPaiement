@@ -14,19 +14,30 @@ import sockets.gestionPaiement.GestionClient.Client;
  * @author inknown
  */
 public class Pannier {
+
     int id;
     Client client;
-    ArrayList<LignePannier> lignes=new ArrayList<LignePannier>();
-    
-    public void ajouter(Produit p,int quantité){
-        boolean tr=false;
-        for(LignePannier l : lignes){
-            if(l.equalProduit(p)){
-                tr=true;
+    ArrayList<LignePannier> lignes = new ArrayList<LignePannier>();
+
+    public double getTotal() {
+        double result = 0;
+        for (LignePannier l : lignes) {
+            result += l.getTotal();
+        }
+        return result;
+    }
+
+    public void ajouter(Produit p, int quantité) {
+        boolean tr = false;
+        for (LignePannier l : lignes) {
+            if (l.equalProduit(p)) {
+                tr = true;
                 l.ajouterQuantité(quantité);
             }
         }
-        if(!tr) lignes.add(new LignePannier(p, quantité));
+        if (!tr) {
+            lignes.add(new LignePannier(p, quantité));
+        }
     }
-    
+
 }
