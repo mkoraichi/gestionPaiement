@@ -18,10 +18,10 @@ import java.util.logging.Logger;
  */
 public class ServerThread extends Thread implements Runnable {
 
-    Tunel tunel;
-    private String bienvenueMessage = "bienvenu";
-    private String arretMessage = "bye";
-    Scanner scaner = new Scanner(System.in);
+    protected Tunel tunel;
+    protected String bienvenueMessage = "bienvenu";
+    protected String arretMessage = "bye";
+    protected Scanner scaner = new Scanner(System.in);
     public ServerThread() {
     }
 
@@ -53,11 +53,6 @@ public class ServerThread extends Thread implements Runnable {
 
     @Override
     public void run() {
-        envoyerBienvenue(tunel);
-        String msgClient;
-        do {
-            //msgClient = echangerMessages(t);
-        } while (!msgClient.equals(arretMessage));
     }
 
     /**
