@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sockets.gestionPaiement.GestionBanque;
+package sockets.gestionPaiement.Application;
+
+import sockets.gestionPaiement.Publique.ServerThread;
 
 /**
  *
  * @author inknown
  */
-public class Banque {
-    int id;
-    String name;
+public class ApplicationServer extends ServerThread {
+    
 }

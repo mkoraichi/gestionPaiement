@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
+import projetRestaurant.Classes.Ingredient;
 
 /**
  *
@@ -52,6 +53,13 @@ public class Tunel {
     public String read() throws IOException{
             in=new BufferedReader(new InputStreamReader(socket.getInputStream()));
             return in.readLine();
+    }
+    
+    public int readInt() throws IOException{
+            return new Integer(read());
+    }
+    public float readFloat() throws IOException{
+            return new Float(read());
     }
     public String readChat() throws IOException{
            String msg=String.format("> %s:%s : %s",socket.getInetAddress().getHostName() ,socket.getPort(),read());
