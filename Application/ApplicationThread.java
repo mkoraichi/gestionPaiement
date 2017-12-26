@@ -6,40 +6,43 @@
 package sockets.gestionPaiement.Application;
 
 import java.io.IOException;
+import java.rmi.server.Operation;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import sockets.gestionPaiement.GestionProduit.Pannier;
 import sockets.gestionPaiement.GestionProduit.Produit;
+import sockets.gestionPaiement.Publique.Operations;
 import sockets.gestionPaiement.Publique.ServerThread;
 
 /**
  *
  * @author inknown
  */
-public class ApplicationThread extends ServerThread{
+public class ApplicationThread extends ServerThread {
 
     /**
      *
      */
-    protected Pannier pannier=new Pannier();
-    
-    public void ajouterProduit(Produit p,int quantité){
-        
+    protected Pannier pannier = new Pannier();
+
+    public void ajouterProduit(Produit p, int quantité) {
+        pannier.ajouter(p, quantité);
     }
-        public void getTotal(){
-        double result=0;
-        for(LignePannier)
+
+    public double getTotal() {
+        return pannier.getTotal();
     }
+
     @Override
     public void run() {
         try {
-            tunel.send("Envoyer Votre données :");
-            String msgClient=tunel.read();
-            
+            tunel.send(Operations.DemandeId.toString());
+            int clientId = tunel.readInt();
+
         } catch (IOException ex) {
             Logger.getLogger(ApplicationThread.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
+
     }
 }
