@@ -12,7 +12,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
-import projetRestaurant.Classes.Ingredient;
+import java.util.Scanner;
+import projetRestaurant.Classes.Ingrediant;
 
 /**
  *
@@ -22,6 +23,7 @@ public class Tunel {
     Socket socket;
     PrintWriter out;
     BufferedReader in;
+    protected Scanner keyboard=new Scanner(System.in);
     public Tunel(String adr, int port) throws IOException {
         this.socket = new Socket(adr, port);
     };
@@ -49,6 +51,9 @@ public class Tunel {
     public String exChange(String message) throws IOException{
         send(message);
         return read();
+    }
+    public void sendKeyboard() throws IOException{
+        send(keyboard.nextLine());
     }
     public String read() throws IOException{
             in=new BufferedReader(new InputStreamReader(socket.getInputStream()));

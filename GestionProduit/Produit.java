@@ -13,6 +13,11 @@ public class Produit {
     private float prix;
     private int id;
 
+    public Produit( int id,float prix) {
+        this.prix = prix;
+        this.id = id;
+    }
+    
     /**
      * @return the prix
      */

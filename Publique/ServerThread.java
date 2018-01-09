@@ -21,6 +21,7 @@ public class ServerThread extends Thread implements Runnable {
     protected Tunel tunel;
     protected String bienvenueMessage = "bienvenu";
     protected String arretMessage = "bye";
+    protected String msgClient,msgServer;
     protected Scanner scaner = new Scanner(System.in);
     public ServerThread() {
     }

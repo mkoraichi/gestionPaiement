@@ -12,5 +12,12 @@ package sockets.gestionPaiement.Publique;
 public enum Operations {
     Ajouter,
     Calculer,
-    DemandeId
+    DemandeId,
+    DemandeNom,
+    DemandePrenom,
+    Payer,
+    Libre,
+    DemandeProduit,
+    DemandeIdProduit,
+    DemandeQteProduit,
 }
